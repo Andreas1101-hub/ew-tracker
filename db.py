@@ -18,7 +18,6 @@ class Database:
             cursor.execute(sql_insert, ('Complete Flask web dev',))
             db.commit()
 
-
     def get_ews(self):
         """
         TO IMPLEMENT
