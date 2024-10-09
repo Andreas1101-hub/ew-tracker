@@ -10,15 +10,46 @@
     <body class='container col-6'>
         <div class='p-4'>
             <h2>Add EW</h2>
-            <div>TODO: Build your form here</div>
+            <form action="/add" method="POST">
+                <label for="task">Task</label> <br>
+                <input type="text" id="task" name="Task" value=""> <br>
+                
+                <label for="subject">Subject</label> <br>
+                <input type="text" id="subject" name="Subject" value=""> <br>
+                
+                <label for="beak">Beak</label> <br>
+                <input type="text" id="beak" name="Beak" value=""> <br>
+                
+                <label for="dueDate">Due Date</label> <br>
+                <input type="date" id="dueDate" name="Due Date" value=""> <br>
+                
+                <button type="submit">Submit</button>
+            </form>
         </div>
         <div class='p-4'>
             <h2>View EWs</h2>
-            {% if ews|length == 0 %}
-                <div>No EWs set yet</div>
-            {% else %}
-                <div>TODO: View your EWs here</div>
-            {% endif %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Subject</th>
+                        <th>Beak</th>
+                        <th>Due Date</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </body>
 </html>

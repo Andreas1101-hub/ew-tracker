@@ -7,17 +7,12 @@ db = Database('database.db')
 
 @app.route('/')
 def list_ews():
-    """
-    TO IMPLEMENT
-    """
-    return 'Get coding!'
+    return render_template("list.html", rows = db.get_ews())
 
 @app.route('/add', methods=['POST'])
 def add_ew():
-    """
-    TO IMPLEMENT
-    """
-    pass
+    Database.create_ew()
+    return redirect('/')
 
 
 # EXTRA CREDIT
